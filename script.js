@@ -79,16 +79,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     switch (e.keyCode) {
       case 37:
-        if (pacmanCurrentIndex % width !== 0) pacmanCurrentIndex -= 1;
+        if (
+          pacmanCurrentIndex % width !== 0 &&
+          !sqaures[pacmanCurrentIndex - 1].classList.contains("wall")
+        )
+          pacmanCurrentIndex -= 1;
         break;
       case 38:
-        if (pacmanCurrentIndex - width >= 0) pacmanCurrentIndex -= width;
+        if (
+          pacmanCurrentIndex - width >= 0 &&
+          !sqaures[pacmanCurrentIndex - width].classList.contains("wall")
+        )
+          pacmanCurrentIndex -= width;
         break;
       case 39:
-        if (pacmanCurrentIndex % width < width - 1) pacmanCurrentIndex += 1;
+        if (
+          pacmanCurrentIndex % width < width - 1 &&
+          !sqaures[pacmanCurrentIndex + 1].classList.contains("wall")
+        )
+          pacmanCurrentIndex += 1;
         break;
       case 40:
-        if (pacmanCurrentIndex + width < width * width)
+        if (
+          pacmanCurrentIndex + width < width * width &&
+          !sqaures[pacmanCurrentIndex + width].classList.contains("wall")
+        )
           pacmanCurrentIndex += width;
     }
 
