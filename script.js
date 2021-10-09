@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
           !squares[pacmanCurrentIndex - 1].classList.contains("ghost-lair")
         )
           pacmanCurrentIndex -= 1;
+        //check if pacman is in the left exit
         if (squares[pacmanCurrentIndex - 1] === squares[363]) {
           pacmanCurrentIndex = 391;
         }
@@ -106,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
           !squares[pacmanCurrentIndex + 1].classList.contains("ghost-lair")
         )
           pacmanCurrentIndex += 1;
+        //check if pacman is in the right exit
         if (squares[pacmanCurrentIndex + 1] === squares[392]) {
           pacmanCurrentIndex = 364;
         }
