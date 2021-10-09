@@ -44,4 +44,5 @@ document.addEventListener("DOMContentLoaded", () => {
   // 2 - ghost-lair
   // 3 - power-pellet
   // 4 - empty
+    
 });
