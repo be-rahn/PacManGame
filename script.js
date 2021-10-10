@@ -234,14 +234,14 @@ document.addEventListener("DOMContentLoaded", () => {
       ghosts.forEach((ghost) => clearInterval(ghost.timerId));
       document.removeEventListener("keyup", movePacman);
       setTimeout(function () {
-        alert("Game Over!");
+        alert("Game Over! Refresh page to play again.");
       }, 500);
     }
   }
 
   //check for a win
   function checkForWin() {
-    if (score === 374) {
+    if (score === 274) {
       ghosts.forEach((ghost) => clearInterval(ghost.timerId));
       document.removeEventListener("keyup", movePacman);
       setTimeout(function () {
