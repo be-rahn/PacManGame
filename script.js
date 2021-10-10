@@ -155,6 +155,29 @@ document.addEventListener("DOMContentLoaded", () => {
     new Ghost("blinky", 348, 250),
     new Ghost("pinky", 376, 400),
     new Ghost("inky", 351, 300),
-    new Ghost("cylde", 379, 500),
+    new Ghost("clyde", 379, 500),
   ];
+
+  //draw ghosts onto the grid
+  ghosts.forEach((ghost) => {
+    squares[ghost.currentIndex].classList.add(ghost.className);
+    squares[ghost.currentIndex].classList.add("ghost");
+  });
+
+  //move the ghosts randomly
+  ghosts.forEach((ghost) => moveGhost(ghost));
+
+  //write the function to move the ghosts
+  function moveGhost(ghost) {
+    const directions = [-1, +1, width, -width];
+    let direction = directions[Math.floor(Math.random() * directions.length)];
+
+    ghost.timerId = setInterval(function () {
+      if (
+        !squares[ghost.currentIndex + direction].classList.contains("wall") &&
+        !squares[ghost.currentIndex + direction].classList.contains("ghost")
+      ) {
+      } else direction = directions[Math.floor(Math.random() * directions.length)];
+    }, ghost.speed);
+  }
 });
